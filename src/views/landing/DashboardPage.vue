@@ -9,9 +9,9 @@ const router = useRouter();
 // Navigation items
 const navItems = [
   {id: 'about', text: 'About'},
+  {id: 'experience', text: 'Experience'},
   {id: 'skills', text: 'Skills'},
   {id: 'portfolio', text: 'Portfolio'},
-  {id: 'experience', text: 'Experience'},
   {id: 'education', text: 'Education'},
   {id: 'contact', text: 'Contact'}
 ];
@@ -225,7 +225,7 @@ const prevTestimonial = () => {
                 @click="logout"
                 class="flex items-center text-gray-500 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors"
             >
-              <i class="fas fa-sign-out-alt mr-2"></i> Logout
+              <i class="fas fa-right-from-bracket mr-2"></i> Logout
             </button>
           </div>
 
@@ -280,7 +280,7 @@ const prevTestimonial = () => {
               :href="social.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center transition-colors"
+              class="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center  transition-colors"
           >
             <i
                 :class="[social.icon, 'text-white text-xl transition-colors']"
@@ -341,6 +341,44 @@ const prevTestimonial = () => {
                     <div class="w-2/3 text-gray-600">English (Fluent), Bangla (Native)</div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Experience Section -->
+      <section id="experience" class="mb-20">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12 relative pb-2 after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-orange-600">
+          Work Experience
+        </h2>
+        <div class="space-y-8">
+          <div
+              v-for="exp in experiences"
+              :key="exp.company"
+              class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+          >
+            <div class="md:flex">
+              <div class="md:w-1/4 bg-orange-700 text-white p-8 flex flex-col items-center justify-center">
+                <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center mb-4">
+                  <img :src="exp.logo" :alt="exp.company" class="w-16 h-16 object-contain">
+                </div>
+                <h3 class="text-xl font-bold text-center">{{ exp.company }}</h3>
+                <p class="text-orange-200 text-sm mt-2 text-center">{{ exp.duration }}</p>
+              </div>
+              <div class="md:w-3/4 p-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">{{ exp.position }}</h3>
+                <ul class="space-y-3">
+                  <li
+                      v-for="(item, index) in exp.description"
+                      :key="index"
+                      class="flex items-start text-gray-600"
+                  >
+                    <i class="fas fa-check text-orange-600 mr-2 mt-1"></i>
+                    <span>{{ item }}</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -423,42 +461,7 @@ const prevTestimonial = () => {
         </div>
       </section>
 
-      <!-- Experience Section -->
-      <section id="experience" class="mb-20">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12 relative pb-2 after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-orange-600">
-          Work Experience
-        </h2>
-        <div class="space-y-8">
-          <div
-              v-for="exp in experiences"
-              :key="exp.company"
-              class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-          >
-            <div class="md:flex">
-              <div class="md:w-1/4 bg-orange-700 text-white p-8 flex flex-col items-center justify-center">
-                <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center mb-4">
-                  <img :src="exp.logo" :alt="exp.company" class="w-16 h-16 object-contain">
-                </div>
-                <h3 class="text-xl font-bold text-center">{{ exp.company }}</h3>
-                <p class="text-orange-200 text-sm mt-2 text-center">{{ exp.duration }}</p>
-              </div>
-              <div class="md:w-3/4 p-8">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-4">{{ exp.position }}</h3>
-                <ul class="space-y-3">
-                  <li
-                      v-for="(item, index) in exp.description"
-                      :key="index"
-                      class="flex items-start text-gray-600"
-                  >
-                    <i class="fas fa-check text-orange-600 mr-2 mt-1"></i>
-                    <span>{{ item }}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <!-- Education Section -->
       <section id="education" class="mb-20">
