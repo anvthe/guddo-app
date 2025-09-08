@@ -89,11 +89,5 @@ const handleClick = (evt) => {
 </template>
 
 <style scoped>
-.btn-label {
-  @apply mx-1;
-}
 
-.btn-label-right {
-  @apply ml-1;
-}
 </style>

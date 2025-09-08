@@ -235,7 +235,7 @@ const prevTestimonial = () => {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div
             class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white mx-auto mb-8 shadow-xl">
-          <img src="@/assets/images/jack.jpg" alt="Roney" class="w-full h-full object-cover">
+          <img src="../../assets/images/jack.jpg" alt="Roney" class="w-full h-full object-cover">
         </div>
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Roney Khan</h1>
         <p class="text-xl md:text-2xl mb-8 opacity-90">Software Engineer</p>

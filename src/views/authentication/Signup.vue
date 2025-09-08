@@ -70,9 +70,11 @@ const signInWithGoogle = () => {
 <template>
   <div class="min-h-screen flex items-center justify-center py-12 relative bg-cover bg-center">
 
+
+
     <div
         class="absolute inset-0 bg-cover bg-center"
-        style="background-image: url('src/assets/images/login.jpg');"
+        style="background-image: url('../../assets/images/login.jpg');"
     >
     </div>
 
@@ -251,7 +253,7 @@ const signInWithGoogle = () => {
                 @click="signInWithGoogle"
                 class="w-full border border-gray-300 py-2.5 rounded-lg flex items-center justify-center gap-3 hover:bg-gray-50 transition-all duration-200 shadow-sm hover:shadow"
             >
-              <img src="@/assets/images/icon/icon-google.svg" alt="Google" class="h-5 w-5"/>
+              <img src="../../assets/images/icon/icon-google.svg" alt="Google" class="h-5 w-5"/>
               <span class="text-gray-700 font-medium">Sign Up with Google</span>
             </button>
           </form>

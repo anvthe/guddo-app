@@ -1,3 +1,9 @@
+<script setup>
+import { ref } from "vue";
+
+const year = ref(new Date().getFullYear());
+</script>
+
 <template>
   <footer class="bg-gradient-to-r from-orange-500 to-orange-700 text-white">
     <div class="max-w-7xl mx-auto px-6 py-10 md:py-14">
@@ -113,8 +119,3 @@
   </footer>
 </template>
 
-<script setup>
-import { ref } from "vue";
-
-const year = ref(new Date().getFullYear());
-</script>

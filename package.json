@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
     "@formkit/auto-animate": "^0.8.2",
     "@fortawesome/fontawesome-free": "^7.0.1",
     "@stripe/stripe-js": "^7.3.1",
@@ -22,6 +23,7 @@
     "dashjs": "^4.7.0",
     "dayjs": "^1.11.13",
     "docx": "^9.5.1",
+    "element-plus": "^2.11.2",
     "ffmpeg.js": "^4.2.9003",
     "file-saver": "^2.0.5",
     "flowbite": "^3.1.2",

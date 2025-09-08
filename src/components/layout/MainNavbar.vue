@@ -1,119 +1,113 @@
+<script setup>
+
+import {
+  ElPopover,
+  ElButton,
+  ElTooltip,
+  ElDropdown,
+  ElDropdownMenu,
+  ElDropdownItem
+} from 'element-plus';
+import {
+  User,
+  Document,
+  Twitter,
+  Facebook,
+  Instagram
+} from '@element-plus/icons-vue';
+
+defineProps({
+  transparent: Boolean,
+  colorOnScroll: Number
+});
+</script>
+
 <template>
   <navbar
-    position="fixed"
-    type="primary"
-    :transparent="transparent"
-    :color-on-scroll="colorOnScroll"
-    menu-classes="ml-auto"
+      position="fixed"
+      type="primary"
+      :transparent="transparent"
+      :color-on-scroll="colorOnScroll"
+      menu-classes="ml-auto"
   >
-
-    <template slot="navbar-menu">
-
-
-
-
+    <template #navbar-menu>
+      <!-- Login Link with Tooltip -->
       <li class="nav-item">
-        <a
-            class="nav-link"
-            rel="tooltip"
-            title="Follow us on Twitter"
-            data-placement="bottom"
-            href="/login"
-            target="_blank"
-        >
-          <i class="now-ui-icons users_circle-08"></i> Login
-        </a>
+        <el-tooltip content="Login to your account" placement="bottom">
+          <router-link to="/login" class="nav-link">
+            <el-icon><User /></el-icon>
+            <span>Login</span>
+          </router-link>
+        </el-tooltip>
       </li>
 
-
+      <!-- Profile Link with Tooltip -->
       <li class="nav-item">
-        <a
-            class="nav-link"
-            rel="tooltip"
-            title="Follow us on Twitter"
-            data-placement="bottom"
-            href="/profile"
-            target="_blank"
-        >
-          <i class="now-ui-icons users_single-02"></i> Profile
-
-        </a>
+        <el-tooltip content="View your profile" placement="bottom">
+          <router-link to="/profile" class="nav-link">
+            <el-icon><User /></el-icon>
+            <span>Profile</span>
+          </router-link>
+        </el-tooltip>
       </li>
 
-
+      <!-- Landing Page Link with Tooltip -->
       <li class="nav-item">
-        <a
-            class="nav-link"
-            rel="tooltip"
-            title="Follow us on Twitter"
-            data-placement="bottom"
-            href="/landing"
-            target="_blank"
-        >
-          <i class="now-ui-icons education_paper"></i> Landing
+        <el-tooltip content="Visit landing page" placement="bottom">
+          <router-link to="/landing" class="nav-link">
+            <el-icon><Document /></el-icon>
+            <span>Landing</span>
+          </router-link>
+        </el-tooltip>
+      </li>
 
-        </a>
+      <!-- Social Media Links with Tooltips -->
+      <li class="nav-item">
+        <el-tooltip content="Follow us on Twitter" placement="bottom">
+          <a href="https://twitter.com/" target="_blank" class="nav-link">
+            <el-icon><Twitter /></el-icon>
+            <span class="d-lg-none d-xl-none">Twitter</span>
+          </a>
+        </el-tooltip>
       </li>
 
       <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
-          title="Follow us on Twitter"
-          data-placement="bottom"
-          href="https://twitter.com/"
-          target="_blank"
-        >
-          <i class="fab fa-twitter"></i>
-          <p class="d-lg-none d-xl-none">Twitter</p>
-        </a>
+        <el-tooltip content="Like us on Facebook" placement="bottom">
+          <a href="https://www.facebook.com/" target="_blank" class="nav-link">
+            <el-icon><Facebook /></el-icon>
+            <span class="d-lg-none d-xl-none">Facebook</span>
+          </a>
+        </el-tooltip>
       </li>
+
       <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
-          title="Like us on Facebook"
-          data-placement="bottom"
-          href="https://www.facebook.com/"
-          target="_blank"
-        >
-          <i class="fab fa-facebook-square"></i>
-          <p class="d-lg-none d-xl-none">Facebook</p>
-        </a>
+        <el-tooltip content="Follow us on Instagram" placement="bottom">
+          <a href="https://www.instagram.com/" target="_blank" class="nav-link">
+            <el-icon><Instagram /></el-icon>
+            <span class="d-lg-none d-xl-none">Instagram</span>
+          </a>
+        </el-tooltip>
       </li>
+
+      <!-- Optional: Dropdown Menu Example -->
       <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
-          title="Follow us on Instagram"
-          data-placement="bottom"
-          href="https://www.instagram.com/"
-          target="_blank"
-        >
-          <i class="fab fa-instagram"></i>
-          <p class="d-lg-none d-xl-none">Instagram</p>
-        </a>
+        <el-dropdown>
+          <span class="nav-link cursor-pointer">
+            <el-icon><User /></el-icon>
+            More Options
+          </span>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item>Settings</el-dropdown-item>
+              <el-dropdown-item>Help</el-dropdown-item>
+              <el-dropdown-item divided>Logout</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
       </li>
     </template>
   </navbar>
 </template>
 
-<script>
-import { DropDown, Navbar, NavLink } from '@/components';
-import { Popover } from 'element-ui';
-export default {
-  name: 'main-navbar',
-  props: {
-    transparent: Boolean,
-    colorOnScroll: Number
-  },
-  components: {
-
-    Navbar,
-
-    [Popover.name]: Popover
-  }
-};
-</script>
-
-<style scoped></style>
+<style scoped>
+</style>

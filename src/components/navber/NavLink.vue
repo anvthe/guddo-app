@@ -52,33 +52,5 @@ function handleClick(event) {
 </template>
 
 <style scoped>
-.dropdown-item {
-  @apply block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-200;
-  @apply focus:outline-none focus:bg-gray-100 focus:text-gray-900;
-}
 
-.router-link-active {
-  @apply bg-blue-50 text-blue-700 font-medium;
-}
-
-.router-link-active:hover {
-  @apply bg-blue-100 text-blue-800;
-}
-
-/* Dark theme support */
-.dark .dropdown-item {
-  @apply text-gray-300 hover:bg-gray-700 hover:text-white;
-}
-
-.dark .dropdown-item:focus {
-  @apply bg-gray-700 text-white;
-}
-
-.dark .router-link-active {
-  @apply bg-blue-900 text-blue-100;
-}
-
-.dark .router-link-active:hover {
-  @apply bg-blue-800 text-white;
-}
 </style>

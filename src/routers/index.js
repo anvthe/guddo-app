@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Login from '@/views/Login.vue'
-import Signup from '@/views/Signup.vue'
-import DashboardPage from '@/views/DashboardPage.vue'
-import OAuth2Redirect from "@/views/OAuth2Redirect.vue";
+import Login from '@/views/authentication/Login.vue'
+import Signup from '@/views/authentication/Signup.vue'
+import DashboardPage from '@/views/landing/DashboardPage.vue'
+import OAuth2Redirect from "@/views/authentication/OAuth2Redirect.vue";
 
 const routes = [
      { path: '/', redirect: { name: 'Login' } },

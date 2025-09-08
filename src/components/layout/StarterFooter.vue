@@ -1,3 +1,17 @@
+<script>
+export default {
+  props: {
+    backgroundColor: String,
+    type: String
+  },
+  data() {
+    return {
+      year: new Date().getFullYear()
+    };
+  }
+};
+</script>
+
 <template>
   <footer
     class="footer"
@@ -19,7 +33,7 @@
 
           </li>
           <li>
-            <a href="https://www.creative-tim.com/license">
+            <a href="">
               License
             </a>
           </li>
@@ -27,11 +41,11 @@
       </nav>
       <div class="copyright">
         &copy; {{ year }}, Designed by
-        <a href="https:///www.invisionapp.com" target="_blank" rel="noopener"
+        <a href="" target="_blank" rel="noopener"
           >Invision</a
         >. Coded by
-        <a href="https://binarcode.com" target="_blank" rel="noopener"
-          >BinarCode</a
+        <a href="" target="_blank" rel="noopener"
+          >GUDDO</a
         >
         and
 
@@ -39,17 +53,5 @@
     </div>
   </footer>
 </template>
-<script>
-export default {
-  props: {
-    backgroundColor: String,
-    type: String
-  },
-  data() {
-    return {
-      year: new Date().getFullYear()
-    };
-  }
-};
-</script>
+
 <style></style>
