@@ -1,7 +1,9 @@
 <script setup>
 import {ref} from 'vue';
 import {useRouter} from 'vue-router';
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
+const hoverColor = ref('white')
 const router = useRouter();
 
 // Navigation items
@@ -16,12 +18,13 @@ const navItems = [
 
 // Social links
 const socialLinks = [
-  {icon: 'fab fa-github', url: 'https://www.github.com/AnVThe'},
-  {icon: 'fab fa-facebook-f', url: 'https://www.facebook.com/AnVThe'},
-  {icon: 'fab fa-twitter', url: 'https://www.twitter.com/AnVThe'},
-  {icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/in/anvthe/'},
-  {icon: 'fab fa-instagram', url: 'https://www.instagram.com/anvthe/'}
-];
+  { icon: 'fab fa-github', url: 'https://www.github.com/AnVThe', color: '#181717'}, // GitHub black
+  { icon: 'fab fa-facebook-f', url: 'https://www.facebook.com/AnVThe', color: '#1877F2' }, // Facebook blue
+  { icon: 'fab fa-twitter', url: 'https://www.twitter.com/AnVThe', color: '#1DA1F2' }, // Twitter blue
+  { icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/in/anvthe/', color: '#0A66C2' }, // LinkedIn blue
+  { icon: 'fab fa-instagram', url: 'https://www.instagram.com/anvthe/', color: '#E1306C' } // Instagram pink
+]
+
 
 // Skills data
 const skills = [
@@ -199,8 +202,10 @@ const prevTestimonial = () => {
 
 <template>
   <div class="min-h-screen bg-gray-50 text-gray-800 font-sans antialiased">
+
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-sm z-50">
+    <nav class="fixed w-full bg-black shadow-sm z-50">
+
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
           <div class="flex items-center">
@@ -231,14 +236,27 @@ const prevTestimonial = () => {
     </nav>
 
     <!-- Hero Section -->
-    <header class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-orange-600 to-orange-700 text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <header class="relative pt-24 pb-16 md:pt-32 md:pb-24 text-white overflow-hidden">
+      <!-- Background Image -->
+      <img
+          src="/src/assets/images/jack.jpg"
+          alt="Background"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+      />
+      <!-- Overlay (for darkening background if needed) -->
+<!--      <div class="absolute inset-0 bg-gradient-to-r from-orange-600/80 to-orange-700/80"></div>-->
+      <div class="absolute inset-0 bg-gradient-to-r"></div>
+
+      <!-- Content -->
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div
-            class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white mx-auto mb-8 shadow-xl">
-          <img src="../../assets/images/jack.jpg" alt="Roney" class="w-full h-full object-cover">
+            class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white mx-auto mb-8 shadow-xl"
+        >
+          <img src="../../assets/images/jack.jpg" alt="Roney" class="w-full h-full object-cover" />
         </div>
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Roney Khan</h1>
         <p class="text-xl md:text-2xl mb-8 opacity-90">Software Engineer</p>
+
         <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
           <button
               @click="scrollToSection('contact')"
@@ -262,13 +280,20 @@ const prevTestimonial = () => {
               :href="social.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-colors shadow-md transform hover:scale-110 transition-transform"
+              class="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center transition-colors"
           >
-            <i :class="social.icon" class="text-white text-xl"></i>
+            <i
+                :class="[social.icon, 'text-white text-xl transition-colors']"
+                :style="{ color: 'white' }"
+                @mouseover="e => e.target.style.color = social.color"
+                @mouseleave="e => e.target.style.color = 'white'"
+            ></i>
           </a>
+
         </div>
       </div>
     </header>
+
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <!-- About Section -->
@@ -663,7 +688,8 @@ const prevTestimonial = () => {
                         rel="noopener noreferrer"
                         class="w-10 h-10 rounded-full bg-orange-600 text-white flex items-center justify-center hover:bg-orange-700 transition-colors"
                     >
-                      <i :class="social.icon" class="text-sm"></i>
+                      <i :class="[social.icon, 'text-white text-xl']"></i>
+
                     </a>
                   </div>
                 </div>
@@ -687,11 +713,11 @@ const prevTestimonial = () => {
                 rel="noopener noreferrer"
                 class="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-orange-600 transition-colors"
             >
-              <i :class="social.icon" class="text-sm"></i>
+              <i :class="[social.icon, 'text-white text-xl']"></i>
             </a>
           </div>
 
-          <h2 class="text-2xl font-bold mb-4">Roney Khan</h2>
+          <h2 class="text-2xl text-orange-700 font-bold mb-4">Roney Khan</h2>
           <p class="text-center text-gray-400 max-w-md mb-6">
             Software Engineer specializing in Java, Spring Boot, and modern web technologies.
           </p>

@@ -72,10 +72,12 @@ const signInWithGoogle = () => {
 
 
 
-    <div
-        class="absolute inset-0 bg-cover bg-center"
-        style="background-image: url('../../assets/images/login.jpg');"
-    >
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+          src="/src/assets/images/signin.jpg"
+          alt="Login background"
+          class="w-full h-full object-cover object-center"
+      />
     </div>
 
     <!-- Card -->

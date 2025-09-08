@@ -44,10 +44,12 @@ const signInWithGoogle = () => {
 
   <div class="min-h-screen flex items-center justify-center py-12 relative bg-cover bg-center">
     <!-- Background with improved overlay -->
-    <div
-        class="absolute inset-0 bg-cover bg-center"
-        style="background-image: url('../../assets/images/login.jpg');"
-    >
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+          src="/src/assets/images/login.jpg"
+          alt="Login background"
+          class="w-full h-full object-cover object-center"
+      />
     </div>
 
     <!-- Card -->
